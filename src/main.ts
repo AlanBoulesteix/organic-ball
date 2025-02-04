@@ -66,3 +66,11 @@ function animate() {
 }
 
 animate();
+
+
+window.addEventListener('resize', () => {
+  const canvas = renderer.domElement;
+  camera.aspect = canvas.clientWidth / canvas.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
